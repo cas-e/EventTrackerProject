@@ -1,5 +1,6 @@
 package com.skilldistillery.studylog.entities;
 
+import java.time.LocalDate;
 import java.util.Objects;
 
 import javax.persistence.Entity;
@@ -7,19 +8,21 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+
+
 @Entity
-public class Session {
-	
+public class Sesh {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
+	private LocalDate date;
+	
+	private Integer minutes;
+
 	private String topic;
-
-	public Session() {
-		super();
-	}
-
+	
 	public int getId() {
 		return id;
 	}
@@ -27,6 +30,26 @@ public class Session {
 	public void setId(int id) {
 		this.id = id;
 	}
+
+	public LocalDate getDate() {
+		return date;
+	}
+
+	public void setDate(LocalDate date) {
+		this.date = date;
+	}
+
+	
+
+	public Integer getMinutes() {
+		return minutes;
+	}
+
+	public void setMinutes(Integer minutes) {
+		this.minutes = minutes;
+	}
+	
+	
 
 	public String getTopic() {
 		return topic;
@@ -49,17 +72,14 @@ public class Session {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Session other = (Session) obj;
+		Sesh other = (Sesh) obj;
 		return id == other.id;
 	}
 
 	@Override
 	public String toString() {
-		return "Session [id=" + id + ", topic=" + topic + "]";
+		return "Sesh [id=" + id + ", date=" + date + ", minutes=" + minutes + ", topic=" + topic + "]";
 	}
-	
-	
-	// TODO: stuff
 	
 	
 }

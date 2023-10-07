@@ -6,7 +6,7 @@
     <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
 	<!--  begin entities -->
-	<class>com.skilldistillery.studylog.entities.Session</class>
+	<class>com.skilldistillery.studylog.entities.Sesh</class>
 
 	<!--  end entities -->
 	
