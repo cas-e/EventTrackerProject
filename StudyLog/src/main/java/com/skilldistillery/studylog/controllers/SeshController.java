@@ -81,11 +81,13 @@ public class SeshController {
 	}
 	
 	// exists to see what the date format looks like in json_
+	/*
 	@GetMapping("sessions/today")
 	public Sesh mockDate() {
 		Sesh sesh = new Sesh();
 		sesh.setDate(LocalDate.now());
 		return sesh;
 	}
+	*/
 }
 
