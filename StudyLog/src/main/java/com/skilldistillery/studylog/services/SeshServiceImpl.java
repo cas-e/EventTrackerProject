@@ -1,13 +1,12 @@
 package com.skilldistillery.studylog.services;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.skilldistillery.studylog.entities.Sesh;
-
 import com.skilldistillery.studylog.repositories.SeshRepository;
 
 
@@ -25,9 +24,8 @@ public class SeshServiceImpl implements SeshService {
 	}
 
 	@Override
-	public Sesh retrieve() {
-		// TODO Auto-generated method stub
-		return null;
+	public Sesh retrieve(int seshId) {
+		return seshRepo.findById(seshId);
 	}
 
 	@Override
@@ -36,15 +34,24 @@ public class SeshServiceImpl implements SeshService {
 	}
 
 	@Override
-	public Sesh update(int seshId, Sesh updatingSesh) {
-		// TODO Auto-generated method stub
-		return null;
+	public Sesh update(int seshId, Sesh sVal) {
+		Sesh update = seshRepo.findById(seshId);
+		if (update == null) {
+			return null;
+		}
+		update.setDate(sVal.getDate());
+		update.setMinutes(sVal.getMinutes());
+		update.setTopic(sVal.getTopic());
+		return seshRepo.saveAndFlush(update);
 	}
 
 	@Override
 	public boolean delete(int seshId) {
-		// TODO Auto-generated method stub
-		return false;
+		if (seshRepo.findById(seshId) == null) {
+			return false;
+		}
+		seshRepo.deleteById(seshId);
+		return true;
 	}
 
 }

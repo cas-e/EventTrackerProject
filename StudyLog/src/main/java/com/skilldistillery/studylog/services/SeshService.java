@@ -8,10 +8,10 @@ public interface SeshService {
 	
 	// expectations
 	// these are the minimum c.r.u.d operations to support.
-	List<Sesh> getAllSeshes();
-	Sesh retrieve();
-	Sesh create(Sesh sesh);
-	Sesh update(int seshId, Sesh updatingSesh);
+	List<Sesh> getAllSeshes();                   // y
+	Sesh retrieve(int seshId);                   // y
+	Sesh create(Sesh sesh);                      // y
+	Sesh update(int seshId, Sesh sVal);
 	boolean delete(int seshId);
 	
 }
