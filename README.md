@@ -9,8 +9,8 @@ An RESTful API backend for an upcoming project for logging study sessions.
 | GET       | `/api/sessions`   |              | List of sessions | 200   |
 | GET       | `/api/sessions/1` |              | Single session   | 200 or 404 |
 | POST      | `/api/sessions/`    | JSON of new session       | JSON of created session | 201 or 400 |
-| PUT       | `/api/session/2` | JSON for updating session | JSON of updated session | 200, 404, or 400 |
-| DELETE    | `/api/session/2` |              | | 204, 404, or 400 |
+| PUT       | `/api/sessions/2` | JSON for updating session | JSON of updated session | 200, 404, or 400 |
+| DELETE    | `/api/sessions/2` |              | | 204, 404, or 400 |
 
 ## Technologies Used
 
