@@ -23,6 +23,10 @@ public class Sesh {
 
 	private String topic;
 	
+	private String tag;
+	
+	private String image;
+	
 	public int getId() {
 		return id;
 	}
@@ -59,6 +63,23 @@ public class Sesh {
 		this.topic = topic;
 	}
 
+	
+	public String getTag() {
+		return tag;
+	}
+
+	public void setTag(String tag) {
+		this.tag = tag;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -76,9 +97,11 @@ public class Sesh {
 		return id == other.id;
 	}
 
+	
 	@Override
 	public String toString() {
-		return "Sesh [id=" + id + ", date=" + date + ", minutes=" + minutes + ", topic=" + topic + "]";
+		return "Sesh [id=" + id + ", date=" + date + ", minutes=" + minutes + ", topic=" + topic + ", tag=" + tag
+				+ ", image=" + image + "]";
 	}
 	
 	

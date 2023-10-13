@@ -25,6 +25,8 @@ CREATE TABLE IF NOT EXISTS `sesh` (
   `date` DATE NULL,
   `minutes` INT NULL,
   `topic` VARCHAR(255) NULL,
+  `tag` VARCHAR(255) NULL,
+  `image` VARCHAR(2000) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -44,7 +46,7 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `studylogdb`;
-INSERT INTO `sesh` (`id`, `date`, `minutes`, `topic`) VALUES (1, '2023-10-08', 540, 'Java Full Stack');
+INSERT INTO `sesh` (`id`, `date`, `minutes`, `topic`, `tag`, `image`) VALUES (1, '2023-10-08', 540, 'coding', 'java', '#');
 
 COMMIT;
 
