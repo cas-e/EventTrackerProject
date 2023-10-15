@@ -42,6 +42,8 @@ public class SeshServiceImpl implements SeshService {
 		update.setDate(sVal.getDate());
 		update.setMinutes(sVal.getMinutes());
 		update.setTopic(sVal.getTopic());
+		update.setTag(sVal.getTag());
+		update.setImage(sVal.getImage());
 		return seshRepo.saveAndFlush(update);
 	}
 
