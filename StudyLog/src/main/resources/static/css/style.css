@@ -1,0 +1,25 @@
+* {
+	margin : 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--dm-background: #202020;
+	--dm-text: #dfdfdf;
+}
+
+html {
+	background: var(--dm-background);
+}
+
+h1, blockquote, p {
+	color: var(--dm-text);
+}
+
+.quote {
+	padding: 10px;
+}
+
+.objectTarget {
+	display : none !important;
+}

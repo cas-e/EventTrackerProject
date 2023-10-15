@@ -1,12 +1,34 @@
 export {Get, Post, Put, Delete};
 
+/*
+ * module http implements the basic http verbs
+ *
+ * all verbs return the same kind of object:
+ * { 
+ *   ok  : boolean // 2xx successes all return an "ok" value of "true"
+ *   obj : any     // if (ok === true) then "obj" is a parsed js object from the json body
+ *                 // else, "obj" contains the status code of the failure, e.g. 404
+ * }
+ * 
+ * functions "Post" and "Put" expect "obj" to be a js object, capable of being stringified
+ * 
+ *
+ * example usage:
+ *
+ * import * as http from "/path/to/this/http.js"
+ * async myFuncAttachedToSomeHandlerThatWantsServerData() {
+ *   // await stalls until we receive the stuffs
+ *   let myData = await http.Get("api/stuffs");
+ *   myData.ok ? doDomThings(data.get) : doGracefulRecovery(data.get)
+ * }
+ */
 
-// defines the return type data model. basically it is like Optional<T>,
-// except that the failure option can house data. in this case, the status code of failure
+// constructors for the data return type model
 const pass = obj => ({ok: true,  get : obj});
 const fail = obj => ({ok: false, get : obj});
 
-// defines the api. sadly, capital letters were needed since "delete" is reserved by js
+// defines the api
+// sadly, capital letters were needed since "delete" is reserved by js
 const Get    = async (url)      => await makeRequest("GET", url);
 const Post   = async (url, obj) => await makeRequest("POST", url, obj);
 const Put    = async (url, obj) => await makeRequest("PUT", url, obj );
