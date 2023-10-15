@@ -7,6 +7,7 @@
 
 	<!--  begin entities -->
 	<class>com.skilldistillery.studylog.entities.Sesh</class>
+	<class>com.skilldistillery.studylog.entities.Quote</class>
 
 	<!--  end entities -->
 	

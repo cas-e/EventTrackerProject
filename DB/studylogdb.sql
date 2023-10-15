@@ -16,17 +16,14 @@ CREATE SCHEMA IF NOT EXISTS `studylogdb` DEFAULT CHARACTER SET utf8 ;
 USE `studylogdb` ;
 
 -- -----------------------------------------------------
--- Table `sesh`
+-- Table `quote`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `sesh` ;
+DROP TABLE IF EXISTS `quote` ;
 
-CREATE TABLE IF NOT EXISTS `sesh` (
+CREATE TABLE IF NOT EXISTS `quote` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `date` DATE NULL,
-  `minutes` INT NULL,
-  `topic` VARCHAR(255) NULL,
-  `tag` VARCHAR(255) NULL,
-  `image` VARCHAR(2000) NULL,
+  `content` TEXT NULL,
+  `author` VARCHAR(255) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -42,11 +39,13 @@ SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 -- -----------------------------------------------------
--- Data for table `sesh`
+-- Data for table `quote`
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `studylogdb`;
-INSERT INTO `sesh` (`id`, `date`, `minutes`, `topic`, `tag`, `image`) VALUES (1, '2023-10-08', 540, 'coding', 'java', '#');
+INSERT INTO `quote` (`id`, `content`, `author`) VALUES (1, 'A learning experience is one of those things that says, \'You know that thing you just did? Don\'t do that.\'', 'Douglas Adams');
+INSERT INTO `quote` (`id`, `content`, `author`) VALUES (2, 'There are two ways to write error-free programs; only the third one works.', 'Alan J. Perlis');
+INSERT INTO `quote` (`id`, `content`, `author`) VALUES (3, 'Knowledge and communication are inseparable.', 'Alexandra Elbakyan');
 
 COMMIT;
 
