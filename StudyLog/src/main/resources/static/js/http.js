@@ -10,9 +10,8 @@ export {Get, Post, Put, Delete};
  *                 // else, "obj" contains the status code of the failure, e.g. 404
  * }
  * 
- * functions "Post" and "Put" expect "obj" to be a js object, capable of being stringified
+ * functions "Post" and "Put" expect "obj" to be a js object, which they will stringify
  * 
- *
  * example usage:
  *
  * import * as http from "/path/to/this/http.js"

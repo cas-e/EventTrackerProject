@@ -1,23 +1,57 @@
-* {
-	margin : 0;
-	box-sizing: border-box;
-}
 
 :root {
-	--dm-background: #202020;
+	--dm-background: #0F172A;
 	--dm-text: #dfdfdf;
+}
+
+* {
+	margin: 0;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 html {
 	background: var(--dm-background);
 }
 
+body {
+	max-width: 700px;
+}
 h1, blockquote, p {
 	color: var(--dm-text);
 }
 
+h1 {
+	font-weight: 100;
+	font-size: 40px;
+	margin: 10px;
+}
 .quote {
 	padding: 10px;
+}
+
+.quote-content {
+	font-size: 20px;
+	font-family: monospace;
+}
+
+.quote-author {
+	font-size: 12px;
+	margin-top: 5px;
+	font-family: monospace;
+}
+
+.input, textarea {
+	font: inherit;
+}
+
+.author-edit {
+	display: inline-block;
+	
+	background: var(--dm-text);
+	color:var(--dm-background);
 }
 
 .objectTarget {

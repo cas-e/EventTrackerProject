@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Quotables</title>
 <link rel="stylesheet" href="css/style.css">
 <script type="module" src="js/http.js"></script>
 <script type="module" src="js/script.js"></script>
@@ -11,12 +11,41 @@
 
 <h1>Quotes</h1>
 
-<div id="quoteList">
-	<div class="quote objectTarget" id="quote">
-		<blockquote><param name="content"></blockquote>
-		<p>— <param name="author"></p>
-	</div>
+<button style="margin-left:10px;" id="addQuote">Add new quote</button>
+<br>
+<br>
+
+<div id="addSection">
+	
 </div>
+<div id="quoteList">
+
+</div>
+
+<div class="quote objectTarget" id="quote">
+	<hr>
+	<br>
+	<blockquote class="quote-content"><param name="content"></blockquote>
+	<p class="quote-author">— <param name="author"></p>
+	<br>
+	<button class="quoteEdit">Edit</button>
+	<br>
+	<button class="quoteDelete">Delete</button>
+</div>
+
+<div class="quote objectTarget" id="editView">
+	<form>
+	<hr>
+	<br>
+	<blockquote class="quote-content"><param name="content"></blockquote>
+	<p class="quote-author">— <param name="author"></p>
+	<br>
+	<button class="editConfirm">Confirm</button>
+	<br>
+	<button class="editCancel">Cancel</button>
+	</form>
+</div>
+
 
 </body>
 </html>
