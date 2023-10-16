@@ -54,6 +54,19 @@ h1 {
 	color:var(--dm-background);
 }
 
+textarea[name="content"] {
+	width : 100%;
+	height: 100px;
+}
+
+
+textarea[name="author"] {
+	width : 50%;
+	height: 18px; 
+}
+
 .objectTarget {
 	display : none !important;
 }
+
+

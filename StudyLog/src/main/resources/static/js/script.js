@@ -41,15 +41,15 @@ async function makeUpdate(e, index) {
 	let updated = await http.Put(`api/quotes/${model[index].id}`, obj);
 	
 	// TODO come back later to add some error handling
-
+	if (!updated.ok) {
+		console.log(updated.get)
+	}
 	// just reflow everything.... think of something better later
 	requestAndDiplayAllQuotes();	
 }
 
 async function sendDelete(e, index) {
-	console.log(e);
-	console.log(index);
-	
+
 	let deleted = await http.Delete(`api/quotes/${model[index].id}`);
 	
 	if (!deleted.ok) {
@@ -126,6 +126,7 @@ function unhideQuotes() {
 
 /* dom helpers */
 const objectFromForm = f => Object.fromEntries((new FormData(f)).entries());
+
 
 const textAreaObject = obj => {
 	let textAO = {};
