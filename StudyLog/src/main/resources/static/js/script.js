@@ -1,5 +1,54 @@
 import * as http from "/js/http.js";
 
+// looks like js modules dont' work with tomcat.
+// try to make a wrapper object instead
+
+
+/*
+// constructors for the data return type model
+const pass = obj => ({ok: true,  get : obj});
+const fail = obj => ({ok: false, get : obj});
+
+// defines the api
+// sadly, capital letters were needed since "delete" is reserved by js
+const Get    = async (url)      => await makeRequest("GET", url);
+const Post   = async (url, obj) => await makeRequest("POST", url, obj);
+const Put    = async (url, obj) => await makeRequest("PUT", url, obj );
+const Delete = async (url)      => await makeRequest("DELETE", url);
+
+// implementation
+function makeRequest(verb, url, obj = '') {
+	return new Promise(function (resolve, reject) {
+		let xhr = new XMLHttpRequest();
+		xhr.open(verb, url);
+		xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+		xhr.onreadystatechange = function() {
+			if (xhr.readyState == 4) {
+				if (xhr.status == 204) {
+					resolve(pass(204))         // successful delete
+				}
+				else if (xhr.status >= 200 && xhr.status < 300) {
+					let data = JSON.parse(xhr.responseText);
+					resolve(pass(data));       // successful transfer
+				} 
+				else {
+					resolve(fail(xhr.status)); // failed
+				}
+			}
+		}
+		xhr.send(JSON.stringify(obj));
+	});
+}
+
+const http = ( () => ({
+	Get : Get, 
+	Post : Post,
+	Put : Put, 
+	Delete : Delete
+}))()
+
+*/
+
 // array of quotes
 let model = [];
 
@@ -8,6 +57,7 @@ const makeQuoteId  = num => `quote-${num}`;
 const getQuoteById = num => document.getElementById(`quote-${num}`); 
 
 window.addEventListener('load', () => {
+	console.log("smoke test")
 	requestAndDiplayAllQuotes();
 	let addButton = document.getElementById("addQuote");
 	addButton.addEventListener('click', () => handleAdd());
@@ -16,7 +66,7 @@ window.addEventListener('load', () => {
 /* data fetchers, one async for each C.R.U.D */
 async function requestAndDiplayAllQuotes() {
 	document.getElementById("quoteList").textContent = ''; // reset 
-	let quotes = await http.Get('/api/quotes');
+	let quotes = await http.Get('api/quotes');
 	
 	// todo: better errors
 	quotes.ok ? handleQuotes(quotes.get) : console.log(quotes.get);
