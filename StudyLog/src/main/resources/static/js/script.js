@@ -1,10 +1,12 @@
-import * as http from "/js/http.js";
+//import * as http from "/js/http.js";
 
 // looks like js modules dont' work with tomcat.
+// or at least I cant get them to... they work locally.
+
 // try to make a wrapper object instead
 
 
-/*
+
 // constructors for the data return type model
 const pass = obj => ({ok: true,  get : obj});
 const fail = obj => ({ok: false, get : obj});
@@ -47,7 +49,7 @@ const http = ( () => ({
 	Delete : Delete
 }))()
 
-*/
+
 
 // array of quotes
 let model = [];
