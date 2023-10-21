@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+/*
+ * Color Palette
+ */
+:root {
+  /* --background: #0f172a; */
+  /* --background: #0f172a; */
+  --background: #181919;
+  --text-color: #dfdfdf;
+
+  --dm-blue: #253443;
+}
+
+html {
+  background-color: var(--background);
+}
+/*
+ * Basic Resets
+ */
+
+ *, *::before, *::after {
+  box-sizing: border-box;
+ }
+
+* {
+  margin : 0;
+}

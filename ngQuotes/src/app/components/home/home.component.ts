@@ -13,7 +13,11 @@ export class HomeComponent {
 
   editDraft : Quote | null = null;
 
+
   createDraft : Quote | null = null;
+
+  /* TEMP : set createDraft to true while we edit the style of it */
+  //createDraft : Quote | null = new Quote();
 
   constructor(
     private quoteService : QuoteService
