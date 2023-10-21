@@ -11,7 +11,9 @@ export class HomeComponent {
 
   quotes : Quote[] = [];
 
-  selected : Quote | null = null;
+  editDraft : Quote | null = null;
+
+  createDraft : Quote | null = null;
 
   constructor(
     private quoteService : QuoteService
@@ -27,9 +29,53 @@ export class HomeComponent {
   loadQuotes() {
     this.quoteService.index().subscribe({
       next : (quotes) => {
-        this.quotes = quotes;
+        this.quotes = quotes.reverse();
       },
       error : (err) => console.log("load error " + err)
     })
   }
+
+  confirmCreate(quote : Quote) {
+
+
+    this.quoteService.create(quote).subscribe({
+      next : (quote) => {
+        this.createDraft = null;
+        this.loadQuotes();
+      },
+      error : error => console.log("quote creation error " + error)
+    })
+
+  }
+
+  showCreateQuote() {
+    this.createDraft = new Quote();
+  }
+
+  confirmEdit(quote : Quote | null) {
+    console.log(quote)
+    if (!quote) {
+      console.log("logic error in confirm quote")
+      return;
+    }
+
+    this.quoteService.udpate(quote).subscribe({
+      next: (quote) => {
+        this.editDraft = null;
+        this.loadQuotes();
+      },
+      error: err => console.log("confirm edit err" + err)
+    })
+
+  }
+
+  destroy(quote : Quote) {
+    this.quoteService.delete(quote).subscribe({
+      next: (quote) => {
+        this.loadQuotes();
+      },
+      error: err => console.log("delete quote err " + err)
+    })
+  }
+
 }
