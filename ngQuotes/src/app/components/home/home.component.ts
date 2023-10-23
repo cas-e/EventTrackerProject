@@ -13,9 +13,9 @@ export class HomeComponent {
 
   editDraft : Quote | null = null;
 
-
   createDraft : Quote | null = null;
 
+  oldToNew : boolean = false;
   /* TEMP : set createDraft to true while we edit the style of it */
   //createDraft : Quote | null = new Quote();
 
@@ -82,4 +82,11 @@ export class HomeComponent {
     })
   }
 
+  countQuotes() : number {
+    return this.quotes.length;
+  }
+
+  alphaByAuth() {
+    this.quotes.sort((a, b) => a.author.localeCompare(b.author));
+  }
 }
