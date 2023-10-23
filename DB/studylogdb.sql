@@ -46,6 +46,6 @@ USE `studylogdb`;
 INSERT INTO `quote` (`id`, `content`, `author`) VALUES (1, 'A learning experience is one of those things that says, \'You know that thing you just did? Don\'t do that.\'', 'Douglas Adams');
 INSERT INTO `quote` (`id`, `content`, `author`) VALUES (2, 'There are two ways to write error-free programs; only the third one works.', 'Alan J. Perlis');
 INSERT INTO `quote` (`id`, `content`, `author`) VALUES (3, 'Knowledge and communication are inseparable.', 'Alexandra Elbakyan');
-
+INSERT INTO `quote` (`id`, `content`, `author`) VALUES (4, 'All types of knowledge, ultimately mean self knowledge.', 'Bruce Lee');
 COMMIT;
 
